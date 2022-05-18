@@ -1,0 +1,37 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="display:flex;justify-content:space-between;flex-direction:row;">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="navbar-brand" href="/#">SmartGateX</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/process">Anlık Akış <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/plates/dashboard">Plakalar <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+    <div class="collapse navbar-collapse" >
+    <ul class="navbar-nav ml-auto">
+      {% if request.user.is_authenticated %}
+        <li class="nav-item active">
+            <a class="nav-link" href="/process/">Kontrol Paneli <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/user/logout/">Çıkış Yap <span class="sr-only">(current)</span></a>
+        </li>
+      {% else %}
+        <li class="nav-item active">
+            <a class="nav-link" href="/user/login/">Giriş Yap <span class="sr-only">(current)</span></a>
+        </li>
+      {% endif %}
+        <li class="nav-item active">
+            <a class="nav-link" href="/user/register/">Kayıt Ol<span class="sr-only">(current)</span></a>
+        </li>
+    </ul>
+  </div>
+</nav>

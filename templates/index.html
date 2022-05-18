@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div class="jumbotron text-center">
+        <h3>Hoşgeldiniz </h3>
+        <p style="text-align: justify;">
+ SmartgateX Otomatik Plaka Tanıma Sistemi plakaları tanıyabilen ve bunları dijital verilere dönüştürebilen bir görüntü işleme yazılımıdır. Temelinde nesne algılamanın özelleştirilmiş halidir. Otomatik plaka okuyucular plakaları insan operatörlerinden veya kameralardan çok daha yüksek oranlarda okumak için tipik olarak optik karakter tanıma teknolojisini kullanan yüksek hızlı bilgisayar kontrollü kamera sistemleridir.  Yönetici tarafından yasaklanmış araçlar otoparka giriş yaptığı takdirde yasaklı araç için görevli ve sizlere proaktif bir uyarı gönderilir. Otomatik Plaka Tanıma Sistem büyük ölçüde caydırıcı bir rol oynar. Plakalarının kaydedildiğini ve kontrol edildiğini bilmek, genellikle suç davranışını önceden durdurmak için yeterlidir. </p>
+
+        <p>
+    </div>
+
+            {% if request.user.is_authenticated %}
+                Giriş Yapılmıs, {{ request.user.username }}
+            {% else %}
+                Giriş Yapılmamış
+            {% endif %}
+        </p>
+
+{% endblock body %}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

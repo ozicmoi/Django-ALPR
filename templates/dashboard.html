@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block body %}
+<h3>Kontrol Paneli</h3>
+<hr>
+<p>
+  Hoşgeldiniz, <small>{{request.user.username}}</small>
+</p>
+<hr>
+<a class="btn btn-danger" href="/plates/addplate/">Yeni Araç Kayıt Yap</a>
+<p></p>
+{%  if plates %}
+  <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Plaka</th>
+          <th scope="col">İsim</th>
+          <th scope="col">Soyisim</th>
+          <th scope="col">Model</th>
+          <th scope="col">Kayıt Tarihi</th>
+          <th scope="col">Güncelle</th>
+          <th scope="col">Sil</th>
+        </tr>
+       </thead>
+      <tbody>
+        {% for plate in plates %}
+     <tr>
+       <th scope="row">{{plate.id}}</th>
+       <td><a href="/plates/plate/{{plate.id}}">{{plate.plate}}</a></td>
+       <td>{{plate.name}}</td>
+       <td>{{plate.surname}}</td>
+       <td>{{plate.content}}</td>
+       <td>{{plate.created_date}}</td>
+       <td><a href="/plates/update/{{plate.id}}" class="btn btn-danger">Güncelle</a> </td>
+       <td><a href="/plates/delete/{{plate.id}}" class="btn btn-danger">Sil</a> </td>
+
+
+        {% endfor %}
+      </tbody>
+    </table>
+{%  else %}
+    <div class="alert alert-danger">Henüz Bir Plaka Kaydı Bulunmamaktadır.</div>
+{%  endif %}
+
+
+
+
+{% endblock %}
